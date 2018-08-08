@@ -1,0 +1,85 @@
+\begin{thebibliography}{10}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\selectlanguage{#1}\fi}
+\providecommand*{\href}[2]{{\small #2}}
+\providecommand*{\url}[1]{{\small #1}}
+\providecommand*{\BibUrl}[1]{\url{#1}}
+\providecommand{\BibAnnote}[1]{}
+\providecommand*{\BibEmph}[1]{#1}
+\ProvideTextCommandDefault{\cyrdash}{\hbox to.8em{--\hss--}}
+\providecommand*{\BibDash}{\ifdim\lastskip>0pt\unskip\nobreak\hskip.2em\fi
+\cyrdash\hskip.2em\ignorespaces}
+
+\bibitem{Parrot}
+\selectlanguageifdefined{english}
+\BibEmph{Company~Parrot}. AR.Drone Developer Guide~/ Ed.\ by\ Stephane
+  Piskorski Nicolas Brulez Pierre Eline~Frederic~D’Haeyer. \BibDash
+\newblock М.~: Developer Guide, 2012.
+
+\bibitem{Gurg}
+\selectlanguageifdefined{english}
+\BibEmph{Jeurgens~N.L.M., dr.~ir. A.A.J.~Lefeber}. Identification and Control
+  Implementation of an AR.Drone 2.0. \BibDash
+\newblock М.~: Science Magazine, 2017.
+
+\bibitem{thes}
+\selectlanguageifdefined{english}
+\BibEmph{Monzon~Ivan}. Developing a ROS Enabled Full Autonomous Quadrotor.
+  \BibDash
+\newblock М.~: Science Magazine, 2013.
+
+\bibitem{Thes1}
+\selectlanguageifdefined{english}
+\BibEmph{Svendby~Andreas}. Evaluation of shared tuple spaces as communication
+  model for semi-autonomous robots in a mobile environment. \BibDash
+\newblock М.~: Computer Science Magazine, 2012.
+
+\bibitem{1}
+\selectlanguageifdefined{russian}
+\BibEmph{Wikipedia}. Квадрокоптер Parrot ARDrone. \BibDash
+\newblock 2012. \BibDash
+\newblock URL: \BibUrl{https://ru.wikipedia.org/wiki/Parrot_AR.Drone}
+  ({дата обращения}: 08.04.2013).
+
+\bibitem{geek}
+\selectlanguageifdefined{russian}
+\BibEmph{geektimes}. Классы квадрокоптеров – какие
+  бывают и для чего используются. \BibDash
+\newblock 2006. \BibDash
+\newblock URL: \BibUrl{https://habrahabr.ru/post/160251/} ({дата
+  обращения}: 25.01.2016).
+
+\bibitem{hab}
+\selectlanguageifdefined{russian}
+\BibEmph{habrahabr}. Квадрокоптер дополненной
+  реальности — обзор AR.Drone 2.0. \BibDash
+\newblock 2006. \BibDash
+\newblock URL: \BibUrl{https://habrahabr.ru/post/160251/} ({дата
+  обращения}: 29.11.2012).
+
+\bibitem{zap}
+\selectlanguageifdefined{russian}
+\BibEmph{ivpstore}. Запчасти для Parrot ARDrone. \BibDash
+\newblock 2014. \BibDash
+\newblock URL:
+  \BibUrl{http://ivpstore.ru/katalog/robotyi-i-gadzhetyi/kvadrokoptery/komplektuyushhie/dvigatel-dlya-parrot-ar-drone-20.html}
+  ({дата обращения}: 10.12.2017).
+
+\bibitem{kvadr}
+\selectlanguageifdefined{russian}
+\BibEmph{kvadrokopters}. Мультикоптеры. \BibDash
+\newblock 2006. \BibDash
+\newblock URL:
+  \BibUrl{http://kvadrokopters.com/ustrojstvo-kvadrokoptera/https:/ru.wikipedia.org/wiki/Multicopters}
+  ({дата обращения}: 16.05.2015).
+
+\bibitem{xak}
+\selectlanguageifdefined{russian}
+\BibEmph{xakep}. Обзор возможностей и дополнений
+  Parrot ARDrone. \BibDash
+\newblock 2008. \BibDash
+\newblock URL: \BibUrl{https://xakep.ru/2012/11/11/ar-drone-2-0/} ({дата
+  обращения}: 08.12.2017).
+
+\end{thebibliography}

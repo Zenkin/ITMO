@@ -1,0 +1,39 @@
+Скорость мотора в AR.Drone 2.0 контролируют:
+
+    8 битный контроллер низкого давления в сочетании
+    10 битный аналогово-цифровой преобразователь
+
+http://ivpstore.ru/katalog/robotyi-i-gadzhetyi/kvadrokoptery/komplektuyushhie/dvigatel-dlya-parrot-ar-drone-20.html
+
+На контроллере каждого мотора используется 8 MIPS AVR CPU
+
+https://xakep.ru/2012/11/11/ar-drone-2-0/
+
+
+Аппарат приводится в движение четырьмя бесколлекторными 15 ваттными электродвигателями 35 000 об/мин.
+Литий-полимерный аккумулятор (3 ячейки, 11,1V, 1000 mAh), время зарядки 90 минут
+
+
+https://ru.wikipedia.org/wiki/Parrot_AR.Drone
+
+Материнская плата Parrot AR.Drone 2.0
+Материнская плата Parrot AR.Drone Main Board
+
+Плата навигации для квадрокоптера Parrot AR.Drone 2.0 PF070041
+Parrot AR.Drone Navigation Board PF070007AA
+Navigation Board: гироскоп; акселерометр; датчик давления; ультразвуковой приемопередатчик
+
+Аккумулятор повышенной ёмкости для Parrot AR.Drone 2.0/1.0 GiFi 1500 мАч (2 разъема)
+
+Мотор подсоединяется к электронному контроллеру, созданному специально для AR.Drone. 8-битный микроконтроллер низкого напряжения и 10-битный аналогово-цифровой преобразователь контролируют скорость мотора.
+
+https://toy.elway.ru/radio-toys/nabory-radioupravlyaemyh-igrushek/zapchasti-dlya-parrot-ar-drone/motor-dlya-kvadrokoptera-ar-drone-pf070004/
+
+Материнская плата для AR.Drone
+Сердце твоего Ar.Drone - это материнская плата. Именно она заставляет работать весь механизм вертолета как нужно, в неё устанавливается процессор и модуль Wi-Fi.
+
+
+http://kvadrokopters.com/ustrojstvo-kvadrokoptera/
+https://ru.wikipedia.org/wiki/%D0%9C%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D0%BA%D0%BE%D0%BF%D1%82%D0%B5%D1%80
+
+https://geektimes.ru/company/dronk/blog/269722/

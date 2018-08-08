@@ -1,0 +1,140 @@
+\include{settings}
+
+\begin{document}	% начало документа
+
+% Титульная страница
+\include{titlepage}
+
+% Содержание
+\include{ToC}
+
+
+\section{Цель работы}
+Выборать двигатель для САУ.
+
+
+\section{Варианты параметров}
+
+\begin{center}
+	$K_1=0.15\text{ A/B}$;\\
+	$T_1=0.7\text{ мс}$;\\
+	$K_M=0.12\text{ Нм/A}$;\\
+	$K_E=0.1\text{ Вс}$;\\
+	$J=2.7\cdot 10^{-3}\text{кг}\cdot\text{м}^2$;\\
+	$M_H=0.16\text{ Нм}$;\\
+\end{center}
+
+\section{Ход выполнения работы}
+\subsection{Модель БДПТ, построенная на основе двухфазной синхронной электрической машины}
+\subsubsection{Схема моделирование двухфазной электрической машины:}
+Схема моделирование двухфазной электрической машины. \ref{pic:pic_1}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.3]{1}
+		\caption{- схема моделирование} 
+		\label{pic:pic_1} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\newpage
+
+\subsubsection{График переходного процесса двигателя по скорости:}
+График переходного процесса двигателя по скорости представлен на рисунке \ref{pic:pic_2}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.3]{2}
+		\caption{- схема моделирование} 
+		\label{pic:pic_2} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsubsection{Определение вида и параметров математической модели вход-выход:}
+
+Апериодическое звено 1-го порядка описывается дифференциальным уравнением: 
+\begin{equation}
+	\begin{split}
+		&T\cdot \dot{y}+y=k\cdot g;\\
+	\end{split}
+\end{equation}
+или в виде передаточной функции:
+\begin{equation}
+	\begin{split}
+		&y=\dfrac{k}{Ts+1};\\
+	\end{split}
+\end{equation}
+, где
+\begin{center}
+	$k=138.4, T=0.78$;
+\end{center}
+Тогда передаточная функция примет вид:
+\begin{equation}
+	\begin{split}
+		&y=\dfrac{138.4}{0.78s+1};\\
+	\end{split}
+\end{equation}
+
+\newpage
+
+\subsubsection{Фазовая и временная диаграммы токов при работе двигателя в номинальном режиме:}
+Фазовая и временная диаграммы изображены на рисунках \ref{pic:pic_3} и \ref{pic:pic_4}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.3]{faz}
+		\caption{- фазовая диаграмма} 
+		\label{pic:pic_3} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.3]{tok}
+		\caption{- временная диаграмма} 
+		\label{pic:pic_4} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\newpage
+
+\subsubsection{Механическая и регулировочная характеристики двигателя:}
+Механическая и регулировочная характеристики приведены на рисунках \ref{pic:pic_5} и \ref{pic:pic_6}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.28]{mex}
+		\caption{- механическая характеристика} 
+		\label{pic:pic_5} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.28]{reg}
+		\caption{- регулировочная характеристика} 
+		\label{pic:pic_6} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+\subsection{Модель БДПТ, построенная на основе двухфазной синхронной электрической машины}
+
+\subsubsection{График переходного процесса двигателя по скорости:}
+График переходногопроцесса и временная диаграмма токов приведены на рисунках \ref{pic:pic_7} и \ref{pic:pic_8}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.23]{omega_2}
+		\caption{- график переходного процесса по скорости} 
+		\label{pic:pic_7} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsubsection{Временная диаграмма токов при работе двигателя в номинальном режиме:}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{tok_2}
+		\caption{- временная диаграмма токов} 
+		\label{pic:pic_8} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+\newpage
+
+\section{Вывод}
+В данной лабораторной работе были рассмотрены модели двухфазной и трехфазной синхронной электрической машины. Были получены графики переходных процессов по скорости, механическая и регулировочная характиристики для двухфазной синхронной электрической машины и фазовые и времннные диаграммы при номинальном режиме работы двигателя. Характеристики линейны и практически совпадают с характеристиками реальной синхронной машины. Фазные токи имеют синусоидальную форму.
+\end{document}

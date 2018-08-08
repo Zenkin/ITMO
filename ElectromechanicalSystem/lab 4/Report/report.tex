@@ -1,0 +1,282 @@
+\include{settings}
+
+\begin{document}	% начало документа
+
+% Титульная страница
+\include{titlepage}
+
+% Содержание
+\include{ToC}
+
+
+\section{Цель работы}
+Исследование принципов построения и свойств систем автоматического управления.
+
+\section{Варианты параметров}
+
+$U_n = 110 [B], n_0 = 2500 [rot/min], I_n = 12 [A], M_n = 6.8 [H*m], R = 0.5 [Om], T_{ya} = 9 [ms], J_d=0.0015 [kg*m^2], T_y=5[ms], i_p = 40, J_m = 1.2[kg*m^2]$
+
+
+\section{Ход выполнения работы}
+
+\subsection{Исследование системы с астатизмом нулевого порядка}
+
+\subsubsection{Схема моделирования}
+Схема моделирования представлена на рисунке \ref{pic:pic_1}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.35]{1}
+		\caption{- схема моделирование} 
+		\label{pic:pic_1} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\newpage
+
+\subsubsection{Графики переходных процессов}
+Графики переходных процессов для скорости нагрузки и ошибки для трех различных значений коэффициента регулятора приведены на рисунках \ref{pic:pic_2}-\ref{pic:pic_3}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{K1_K9}
+		\caption{- графки переходного процесса по скорости} 
+		\label{pic:pic_2} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{center}
+$T_1 = 0.35\;c,\; T_2= 0.14\;c,\; T_3 =0.09\;c ;$
+\end{center}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{K1_K9_E}
+		\caption{- графики переходного процесса ошибки} 
+		\label{pic:pic_3} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{center}
+$\varepsilon_{\text{уст}_1}=1.71,\;\varepsilon_{\text{уст}_2}=1.38,\;\varepsilon_{\text{уст}_3}=0.81$;
+\end{center}
+
+
+Определяем значение коэффициента регулятора, при котором САУ находится на границе устойчивости
+\begin{center}
+	$K = 14.6;$
+\end{center}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{K_14_6}
+		\caption{- графики переходного процесса по скорости} 
+		\label{pic:pic_22} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsubsection{Подача на двигатель возмущение по моменту}
+Подаем на двигатель возмущение по моменту M = 5 Нм при K = 2, график приведен на рисунке \ref{pic:pic_4}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{K2_M_5}
+		\caption{- графики переходного процесса скорости при возмущении по моменту} 
+		\label{pic:pic_4} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsubsection{Подача на вход САУ линейно возрастающее воздействие}
+Подаем на вход САУ линейно возрастающее воздействие и для одного из значений коэффициента регулятора получаем временную диаграмму для скорости нагрузки и ошибки. Графики переходных процессов приведены на рисунках \ref{pic:pic_5}-\ref{pic:pic_6}.\\
+$y=2u,\; K = 5$
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{K5_lin}
+		\caption{- график переходного процесса по скорости} 
+		\label{pic:pic_5} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{K5_lin_E}
+		\caption{- графики переходного процесса ошибки} 
+		\label{pic:pic_6} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsection{Исследование системы с астатизмом первого порядка}
+Составляем схему моделирования САУ скоростью механической нагрузки, включающую пропорционально-интегральный регулятор и ОУ. Передаточная функция регулятора:
+\begin{center}
+	$W(s) = \dfrac{0.032285s+1}{0.032285s}$;
+\end{center}
+
+\subsubsection{Схема моделирования}
+Схема моделирования представлена на рисунке \ref{pic:pic_7}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.3]{2}
+		\caption{- схема моделирование} 
+		\label{pic:pic_7} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsubsection{Графики переходных процессов}
+Графики переходных процессов для скорости нагрузки и ошибки для трех различных значений коэффициента регулятора приведены на рисунках \ref{pic:pic_8}-\ref{pic:pic_9}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.22]{K1_K5_W}
+		\caption{- графки переходного процесса по скорости} 
+		\label{pic:pic_8} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{center}
+$T_1 = 0.2\;c,\; T_2= 0.25\;c,\; T_3 =0.33\;c ;$
+\end{center}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{K1_K5_WE}
+		\caption{- графики переходного процесса ошибки} 
+		\label{pic:pic_9} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{center}
+$\varepsilon_{\text{уст}_1}=\varepsilon_{\text{уст}_2}=\varepsilon_{\text{уст}_3}=0.$;
+\end{center}
+
+\subsubsection{Подача на двигатель возмущение по моменту}
+Подаем на двигатель возмущение по моменту M = 10 Нм при K = 3, график приведен на рисунке \ref{pic:pic_10}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{K3_WM20}
+		\caption{- графики переходного процесса скорости при возмущении по моменту} 
+		\label{pic:pic_10} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsubsection{Подача на вход САУ линейно возрастающее воздействие}
+Подаем на вход САУ линейно возрастающее воздействие и для одного из значений коэффициента регулятора получаем временную диаграмму для скорости нагрузки и ошибки. Графики переходных процессов приведены на рисунках \ref{pic:pic_11}-\ref{pic:pic_14}.\\
+$y=2u,\; K = 5$\\
+
+Для различных коэффициентов регулятора\\
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{K3_K6_Wl}
+		\caption{- график переходного процесса по скорости} 
+		\label{pic:pic_11} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{K3_K6_WlE}
+		\caption{- графики переходного процесса ошибки} 
+		\label{pic:pic_12} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+Для различной скорости изменения входного сигнала\\
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{k2_k6_Wl}
+		\caption{- график переходного процесса по скорости} 
+		\label{pic:pic_13} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{k2_k6_WlE}
+		\caption{- графики переходного процесса ошибки} 
+		\label{pic:pic_14} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsection{Cхема моделирования САУ угловым положением механической нагрузки, включающую пропорциональный регулятор и ОУ}
+
+\subsubsection{Схема моделирования}
+Схема моделирования представлена на рисунке \ref{pic:pic_15}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.3]{3}
+		\caption{- схема моделирование} 
+		\label{pic:pic_15} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsubsection{Графики переходных процессов}
+Графики переходных процессов для скорости нагрузки и ошибки для двух различных значений коэффициентов регулятора приведены на рисунках \ref{pic:pic_16}-\ref{pic:pic_17}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{a5_10}
+		\caption{- графки переходного процесса по скорости} 
+		\label{pic:pic_16} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{center}
+$T_1 = 0.77\;c,\;T_2 =1.45\;c ;$
+\end{center}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{a5_10_E}
+		\caption{- графики переходного процесса ошибки} 
+		\label{pic:pic_17} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{center}
+$\varepsilon_{\text{уст}_1}=\varepsilon_{\text{уст}_2}=0.$;
+\end{center}
+
+\subsubsection{Временные диаграммы при постоянной скорости и постоянном ускорении}
+Получаем временную диаграмму при движении с постоянной скоростью и временную диаграмму при движении с постоянным ускорением. По графикам определяем время переходного процесса и установившееся значение ошибки. Графики смотреть на рисунках \ref{pic:pic_18} - \ref{pic:pic_21}
+
+Движение с постоянной скоростью\\
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.21]{a}
+		\caption{- график переходного процесса по углу} 
+		\label{pic:pic_18} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.21]{a_E}
+		\caption{- график переходного процесса ошибки} 
+		\label{pic:pic_19} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{center}
+$T = 0.43\;c;$
+$\varepsilon_{\text{уст}}=0.155$;
+\end{center}
+
+Движение с постоянным ускорением\\
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.21]{aa}
+		\caption{- график переходного процесса по углу} 
+		\label{pic:pic_20} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.21]{aa_E}
+		\caption{- график переходного процесса ошибки} 
+		\label{pic:pic_21} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\newpage
+
+\section{Вывод}
+В данной лабораторной работе было проведено исследование принципов построения и свойств систем автоматического управления. В чвстности САУ с астатизмом нулевого и первого порядка при различных входных сигналах и различный значениях коэффициента регулятора. Были получены коэффиценты регулятора, при которых система находится на границе устойчивости.
+\end{document}

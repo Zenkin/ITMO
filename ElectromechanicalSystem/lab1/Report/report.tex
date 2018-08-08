@@ -1,0 +1,161 @@
+\include{settings}
+
+\begin{document}	% начало документа
+
+% Титульная страница
+\include{titlepage}
+
+% Содержание
+\include{ToC}
+
+
+\section{Цель работы}
+Изучение математических моделей и исследование характеристик электромеханического объекта управления, построенного на основе электродвигателя постоянного тока независимого возбуждения.
+
+
+\section{Варианты параметров}
+
+$U_n = 110 [B], n_0 = 2500 [rot/min], I_n = 12 [A], M_n = 6.8 [H*m], R = 0.5 [Om], T_{ya} = 9 [ms], J_d=0.0015 [kg*m^2], T_y=5[ms], i_p = 40, J_m = 1.2[kg*m^2]$
+
+
+\section{Ход выполнения работы}
+\subsection{Изучить математические модели ЭМО и для полученного варианта задания рассчитать их параметры:}
+\subsection{Составить схему моделирования ЭМО и получить графики переходных процессов напряжения, подаваемого на двигатель, тока якоря, скорости и углового положения вала нагрузки:}
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.37]{sim1}
+		\caption{схема моделирования ЭМО} 
+		\label{pic:pic_1} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{a}
+		\caption{график моделирования a(t)} 
+		\label{pic:pic_2} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{I}
+		\caption{график моделирования I(t)} 
+		\label{pic:pic_3} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{omega}
+		\caption{график моделирования $\omega$(t)} 
+		\label{pic:pic_4} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{U}
+		\caption{график моделирования U(t)} 
+		\label{pic:pic_5} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsection{Исследовать влияние момента сопротивления на вид переходных процессов:}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{alphaM}
+		\caption{графики моделирования a(t)} 
+		\label{pic:pic_2} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{IM}
+		\caption{графики моделирования I(t)} 
+		\label{pic:pic_3} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+$tn_1$ = 0.17 s, I = 26 A;
+$tn_2$ = 0.18 s, I = 19 A;
+$tn_3$ = 0.19 s, I = 12.5 A;
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{omegaM}
+		\caption{графики моделирования $\omega$(t)} 
+		\label{pic:pic_4} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+$tn_1$ = 0.18 s, $\omega$ = 2.5 rad/s;
+$tn_2$ = 0.17 s, $\omega$ = 2 rad/s;
+$tn_3$ = 0.15 s, $\omega$ = 1.6 rad/s;
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{UM}
+		\caption{графики моделирования U(t)} 
+		\label{pic:pic_5} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsection{Исследовать влияние момента инерции нагрузки на вид переходных процессов}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{i_2}
+		\caption{графики моделирования I(t)} 
+		\label{pic:pic_2} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+$tn_1$ = 0.2 s, I = 0 A;
+$tn_2$ = 0.13 s, I = 0 A;
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{omega_2}
+		\caption{графики моделирования $\omega$(t)} 
+		\label{pic:pic_4} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+$tn_2$ = 0.7 s, $\omega$ = 3.3 rad/s;
+$tn_3$ = 0.15 s, $\omega$ = 3.3 rad/s;
+
+\subsection{Собрать схему моделирования приближенной модели ЭМО и получить график переходного процесса скорости вращения нагрузки при моменте сопротивления = 0:}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{sim2}
+		\caption{моделирование упрощенной схемы ЭМО} 
+		\label{pic:pic_4} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{simplomega}
+		\caption{график моделирования $\omega$(t) упрощенной модели} 
+		\label{pic:pic_5} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{omega}
+		\caption{график моделирования $\omega$(t)} 
+		\label{pic:pic_5} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\newpage
+
+\section{Вывод}
+В данной лабораторной работе было проведено изучение математической модели и исследование характеристик электромеханического объекта управления, построенного на основе электродвигателя постоянного тока независимого возбуждения.
+\end{document}

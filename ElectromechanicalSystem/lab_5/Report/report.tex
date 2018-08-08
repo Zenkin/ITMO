@@ -1,0 +1,126 @@
+\include{settings}
+
+\begin{document}	% начало документа
+
+% Титульная страница
+\include{titlepage}
+
+% Содержание
+\include{ToC}
+
+
+\section{Цель работы}
+Исследование принципов построения многоконтурных электромеханических систем автоматического управления.
+
+\section{Ход выполнения работы}
+
+\subsection{Выбраем структуру регулятора тока и на основе стандартных методов настройки рассчитываем необходимые значения параметров закона управления}
+
+\subsubsection{Схема моделирования}
+Схема моделирования представлена на рисунке \ref{pic:pic_1}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.3]{1}
+		\caption{- схема моделирование} 
+		\label{pic:pic_1} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsubsection{Передаточная функция регулятора по току}
+\begin{center}
+	$W_{pm}(s)=\dfrac{1}{T_u\cdot s};$\\
+	$W_{pm}(s)=\dfrac{1}{0.0321\cdot s};$\\
+\end{center}
+
+\newpage
+
+\subsubsection{Переходная характеристика и ее параметры}
+Схема переходного процесса представлена на рисунке \ref{pic:pic_2}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.2]{1_1}
+		\caption{- переходный процесс по току} 
+		\label{pic:pic_2} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+Параметры:
+\begin{center}
+	$T = 0.1 \text{ с}$;\\
+	$\text{Перерегулирование} \; 13.2\%$;\\
+\end{center}
+
+\subsection{Выбраем структуру регулятора скорости и на основе стандартных методов настройки рассчитываем необходимые значения параметров закона управления}
+
+\subsubsection{Схема моделирования}
+Схема моделирования представлена на рисунке \ref{pic:pic_3}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.4]{2}
+		\caption{- схема моделирования} 
+		\label{pic:pic_3} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsubsection{Передаточная функция регулятора по скорости}
+\begin{center}
+	$W_{pm}(s)=\dfrac{K_{pc}\cdot(T_{uc}\cdot s+1)}{T_{uc}\cdot s};$\\
+	$W_{pm}(s)=\dfrac{0.0182\cdot s+0.1723}{0.072\cdot s};$\\
+\end{center}
+
+
+\subsubsection{Переходная характеристика и ее параметры}
+Схема переходного процесса представлена на рисунке \ref{pic:pic_4}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.2]{2_1}
+		\caption{- переходный процесс по скорости} 
+		\label{pic:pic_4} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+Параметры:
+\begin{center}
+	$T = 0.39 \text{ с}$;\\
+\end{center}
+
+\newpage
+
+\subsection{Выбраем структуру регулятора положения и на основе стандартных методов настройки рассчитываем необходимые значения параметров закона управления}
+
+\subsubsection{Схема моделирования}
+Схема моделирования представлена на рисунке \ref{pic:pic_5}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.3]{3_1}
+		\caption{- схема моделирование} 
+		\label{pic:pic_5} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsubsection{Передаточная функция регулятора по положению}
+\begin{center}
+	$W_{p\text{п}}(s)=\dfrac{1}{4\cdot T_c \cdot K_{03}};$\\
+	$W_{p\text{п}}(s)=70.78;$\\
+\end{center}
+
+\newpage
+
+\subsubsection{Переходная характеристика и ее параметры}
+Схема переходного процесса представлена на рисунке \ref{pic:pic_6}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.2]{3}
+		\caption{- переходный процесс по току} 
+		\label{pic:pic_6} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+Параметры:
+\begin{center}
+	$T = 2.8 \text{ с}$;\\
+\end{center}
+
+\section{Вывод}
+В данной лабораторной работе были рассмотрены принципы построения многоконтурных электромеханических систем автоматического управления. Также были расчитаны все значения регуляторов, построены переходные процессы и определены их параметры.
+\end{document}
