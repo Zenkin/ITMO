@@ -1,0 +1,190 @@
+\include{settings}
+
+\begin{document}	% начало документа
+
+% Титульная страница
+\include{titlepage}
+
+% Содержание
+\include{ToC}
+
+
+\section{Цель работы}
+Ознакомление с пакетом прикладных программ SIMULINK и основными приемами моделирования линейных динамических систем.
+
+
+\section{Варианты параметров}
+
+$n = 3$, $a_0 = 7$, $a_1 = 5$, $a_2 = 2$, $b_0 = 10$, $b_1 = 3$, $b_2 = 1.5$, $y(0) = 1$, $\dot{y}(0) = -0.5$, $\ddot{y}(0) = 0$\\
+
+$n = 2$,  $A = \begin{bmatrix}
+				0 & 1\\
+				-5 & -0.5
+				\end{bmatrix}$, $B = \begin{bmatrix}
+									0.5\\
+									1
+									\end{bmatrix}$, $C^T = \begin{bmatrix}
+															5\\
+															0.5
+															\end{bmatrix}$\\
+															
+$x_1(0) = 0.2$, $x_2(0) = -0.1$, $x_3(0) = -$
+
+
+\section{Ход выполнения работы}
+
+\subsection{Модель вход-выход}
+
+\subsubsection{Математическая модель:}
+
+\begin{equation}
+	\begin{split}	
+&\dddot{y} + 2\ddot{y} + 5\dot{y} + 7y = 1.5\ddot{u} + 3\dot{u} + 10u\\
+&s^3y + 2s^2y + 5sy = 1.5s^2u + 3su + 10u | :s^3\\
+&y = \frac{1}{s}(1.5u - 2y) + \frac{1}{s^2}(3u - 5y) + \frac{1}{s^3}(10u - 7y)\\
+&z_1 = y\\
+&z_1(0) = y(0) = 1\\
+&\dot{y} = \dot{z_1} = \dot{z_2} + 1.5u - 2y\\
+&z_2 = \dot{y} - 1.5u + 2y\\
+&z_2(0) = \dot{y}(0) - 1.5u(0) + 2y(0) = -0.5 + 2*1 - 0 = 1.5\\
+&z_2 = z_3 - 5y + 3u\\
+&z_3 = /dot{z_2} + 5y -3u\\
+&z_3 = \ddot{y} - 1.5\dot{u} + 2\dot{y} + 5\dot{y} -3\dot{u}\\
+&z_3(0) = \ddot{y}(0) - 1.5\dot{u}(0) + 2\dot{y}(0) + 5\dot{y}(0) - 3\dot{u}(0) = 0 -0 - 1 - 5*0.5 - 0 = -3.5\\
+	\end{split}
+\end{equation}
+
+\subsubsection{Моделирование системы при двух видах входного воздействия — u = 2sin(t)  и u = 1(t) — и нулевых начальных условиях:}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{SineWave}
+		\caption{схема моделирования $u(t) = 2sin(t)$} 
+		\label{pic:pic_1} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{SineWaveZeroCondition}
+		\caption{графики сигналов $u(t)$ и $y(t)$} 
+		\label{pic:pic_2} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{Const}
+		\caption{схема моделирования $u(t) = 1$} 
+		\label{pic:pic_3} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{ConstZeroCondition}
+		\caption{графики сигналов $u(t)$ и $y(t)$} 
+		\label{pic:pic_4} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsubsection{Моделирование свободного движения системы, т.е. с нулевым входным воздействием и ненулевыми начальными условиям:}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{ZeroImpactNoZeroConditionSimulink}
+		\caption{схема моделирования с нулевым входным воздействием} 
+		\label{pic:pic_5} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{ZeroImpactNoZeroCondition}
+		\caption{график сигнала $y(t)$} 
+		\label{pic:pic_6} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\newpage
+
+\subsection{Модель вход-состояние-выход}
+\subsubsection{Математическая модель:}
+
+\begin{equation}
+    \begin{matrix}
+    \left\{
+    \begin{matrix}
+    \dot{x_1} = x_2 + 0.5u\\
+    \dot{x_2} = -5x_1 - 0.5x_2 + u\\
+    y = 5x_1 + 0.5x_2
+    \end{matrix} \right.
+    \end{matrix}
+\end{equation}
+
+\subsubsection{Моделирование системы при двух видах входного воздействия u = 2sin(t)  и u = 1(t) и нулевых начальных условиях:}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{SineWaveZeroConditionSim_2}
+		\caption{схема моделирования $u(t) = 2sin(t)$} 
+		\label{pic:pic_7} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{SineWaveZeroCOndition_2}
+		\caption{графики сигналов $u(t)$ и $y(t)$} 
+		\label{pic:pic_8} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{ConstZeroConditionSim_2}
+		\caption{схема моделирования $u(t) = 1$} 
+		\label{pic:pic_9} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{ConstZeroCondition_2}
+		\caption{графики сигналов $u(t)$ и $y(t)$} 
+		\label{pic:pic_10} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsubsection{Моделирование свободного движения системы, т.е. с нулевым входным воздействием и ненулевыми начальными условиям:}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{ZeroImpactNoZeroConditionSim_2}
+		\caption{схема моделирования с нулевым входным воздействием} 
+		\label{pic:pic_11} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{ZeroImpactNoZeroCondition_2}
+		\caption{график сигнала $y(t)$}
+		\label{pic:pic_12} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+
+\section{Создание графиков}
+
+\lstinputlisting[
+	label=code:plot,
+	caption={plot.m},% для печати символ '_' требует выходной символ '\'
+]{plot.m}
+\parindent=1cm % командна \lstinputlisting сбивает параментры отступа
+
+\newpage
+
+\section{Вывод}
+В данной лабораторной работе было знакомство с базовыми функциями пакета прикладных программ для решения задач технических вычислений - Matlab. Также были приобретены навыки в работе с графической средой имитационного моделирования - Simulink. Было знакомство с основными приемами моделирования линейных динамических систем. Было проведено моделирование системы вход-выход и вход-состояние-выход при различных видах входного воздействия - u = 1 и u = 2sin(t) и нулевыми начальными условиями, а также свободного движения системы. Также были построены графики входных и выходных сигналов. При исследовании модели вход-состояния-выход все системы пришли к состояния равновесия. Рисунки \ref{pic:pic_8}, \ref{pic:pic_10}, \ref{pic:pic_12}. А при исследовании модели вход-выход с входным сигналом u = 2sin(t) получили незатухающие колебания, что говорит о нестабильности системы \ref{pic:pic_2}. При двух других случаях были получены модели, которые пришли к состоянию равновесия \ref{pic:pic_4} и \ref{pic:pic_6}.
+\end{document}

@@ -1,0 +1,15 @@
+Time = result.time;
+Values_1 = result.signals(1).values;
+Values_2 = result.signals(2).values;
+set(0, 'DefaultTextInterpreter', 'latex');
+set(0,'DefaultAxesFontSize',20,'DefaultAxesFontName','Times New Roman');
+set(0,'DefaultTextFontSize',20,'DefaultTextFontName','Times New Roman');
+figure('Units', 'normalized', 'OuterPosition', [0 0 1 1]);
+plot(Time, Values_1, 'r', 'LineWidth', 1);
+hold on;
+plot(Time, Values_2, 'g--', 'LineWidth', 4);
+title('$Graphs$ $of$ $signals$ $y(t)$');
+xlabel('$t$, s');
+ylabel('$y$');
+legend('исходная модель','преобразованная модель');
+grid on;

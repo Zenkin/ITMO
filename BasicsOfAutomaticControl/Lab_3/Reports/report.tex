@@ -1,0 +1,123 @@
+\include{settings}
+
+\begin{document}	% начало документа
+
+% Титульная страница
+\include{titlepage}
+
+% Содержание
+\include{ToC}
+
+
+\section{Цель работы}
+Ознакомление с принципами построения моделей внешних воздействий — сигналов задания и возмущений.
+
+
+\section{Варианты параметров}
+$\phi = 24^\circ$, $f = 2 c^{-1}$\\
+		
+$\Delta=	4, V=2, F=10;$\\									
+\section{Ход выполнения работы}
+
+\subsection{Исследование командного генератора гармонического сигнала}
+
+\subsubsection{Построение математической модели:}
+\begin{equation}
+	\begin{split}
+&\omega=2\pi f=2\cdot 3.14\cdot 2=12.56;\\
+&A=\frac{\tan(\phi)}{\omega}=\frac{tan(24^\circ)}{12.56}=0.0.354;\\
+&z = \begin{bmatrix}
+				z_1\\
+				z_2
+				\end{bmatrix}, G = \begin{bmatrix}
+				0 & 1\\
+				-157.7536 & 0
+				\end{bmatrix}, H^T = \begin{bmatrix}
+				1\\
+				0
+				\end{bmatrix};\\
+	\end{split}				
+\end{equation}
+				
+\subsubsection{Схема моделирования командного генератора:}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{s_1}
+		\caption{- схема моделирования} 
+		\label{pic:pic_1} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsubsection{Моделирование работы командного генератора:}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.27]{g_1}
+		\caption{- сигнал g(t) и синусоида} 
+		\label{pic:pic_1} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsection{Исследование командного генератора сигнала с трапецеидальным графиком скорости}
+\subsubsection{Построение математической модели:}
+\begin{equation}
+	\begin{split}
+		&\Delta=	4, V=2, F=10;\\
+		&t_\alpha=\left| {\dfrac{V_2-V_1}{\alpha}} \right|=\left| {\dfrac{2-0}{4}} \right|=0.5c;\\
+		&t_b=\dfrac{g}{V}=\dfrac{10}{2}=5c;\\
+		&t_c=\left| {\dfrac{V_2-V_1}{\alpha}} \right|=\left| {\dfrac{0-(-2)}{4}} \right|=0.5c;\\
+	\end{split}				
+\end{equation}
+
+\subsubsection{Схема моделирования командного генератора:}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{g_2}
+		\caption{- сигнал a(t)} 
+		\label{pic:pic_1} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsubsection{Моделирование работы командного генератора:}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{g_3}
+		\caption{- схема моделирования} 
+		\label{pic:pic_1} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{g_4}
+		\caption{- сигнал g(t)} 
+		\label{pic:pic_1} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\newpage
+
+\subsection{Исследование командного генератора возмущения}
+
+\subsubsection{Моделирование работы командного генератора:}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.3]{s_3}
+		\caption{- сигнал V(t)} 
+		\label{pic:pic_1} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\subsubsection{Моделирование работы командного генератора:}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.25]{g_5}
+		\caption{- сигнал g(t)} 
+		\label{pic:pic_1} % название для ссылок внутри кода
+	\end{center}
+\end{figure}
+
+\newpage
+
+\section{Вывод}
+В данной работе было проведено ознакомление с построением моделей внешних воздействий - сигналов задания и возмущений посредствам последовательного дифференцирования, который строит дифференциальное уравнение по известному частному решению, заданному в виде функции времени.
+\end{document}

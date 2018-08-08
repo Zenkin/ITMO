@@ -1,0 +1,68 @@
+\include{settings}
+
+\begin{document}	% начало документа
+
+% Титульная страница
+\include{titlepage}
+
+% Содержание
+\include{ToC}
+
+
+\section{Цель работы}
+Написание скриптов на bash.
+
+\section{Ход работы}
+
+\subsection{Задание 1 «Написание скриптов. Операторы ветвления»}
+
+\subsubsection{Знакомство с командной оболочкой bash}
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale=0.5]{1}
+			\caption{- Отображаем справку по bash} 
+			\label{pic:pic_1} % название для ссылок внутри кода
+		\end{center}
+	\end{figure}
+
+\subsubsection{Bash-скрипт, который выводит Ф.И.О. и вариант группы тремя способами:}
+	\lstinputlisting[
+		label=code:plot,
+		caption={Ф.И.О},
+	]{firstScript.sh}
+	\parindent=1cm
+
+\subsubsection{Анализ каждого метода из пункта 2.1.2:}
+1. Преимущество: код меньший по объёму. Недостатки: выводится текст с которым никак нельзя взаимодействовать.\\
+
+2. Достоинства в том, что можно производить операции с этой строковой переменной. Недостаток, что занимает память.\\
+
+3. Достоинство заключается в том, что можно использовать любое название переменной, т.к. она существует только внутри функции. Недостаток в том, что код может стать непонятным.
+
+\subsubsection{Использование операторов ветвления:}
+	\lstinputlisting[
+		label=code:plot,
+		caption={проверка на число},
+	]{secondScript.sh}
+	\parindent=1cm
+
+\newpage
+
+\subsection{Задание 2 «Написание скриптов на bash. Циклы»}
+\subsubsection{Использование циклов:}
+	\lstinputlisting[
+		label=code:plot,
+		caption={группы},
+	]{firdScript.sh}
+	\parindent=1cm
+
+\subsubsection{Факториал n для заданного n, принадлежащего R:}
+	\lstinputlisting[
+		label=code:plot,
+		caption={факториал},
+	]{fourthScript.sh}
+	\parindent=1cm
+
+\section{Вывод}
+В данной лабораторной работе были получены навыки в написании скриптов на bash - освнов программирования, циклов и операторов ветвления. 
+\end{document}
